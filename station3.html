@@ -1,32 +1,241 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Station 3 — AI Games & Challenges</title>
   <style>
-    body { font-family: Arial; padding: 20px; background: #E2EFDA; }
-    h1 { color: #444; }
-    a { display: block; margin: 10px 0; font-size: 18px; }
+    /* --- consistent with school site style --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4fb;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      border: 1px solid #e5edf5;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0b2a4a;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    h1 i {
+      color: #2563eb;
+    }
+
+    .subhead {
+      color: #475569;
+      font-size: 1.05rem;
+      border-left: 4px solid #2563eb;
+      padding-left: 1rem;
+      margin-bottom: 1.8rem;
+      font-weight: 400;
+    }
+
+    /* --- link grid (cards) --- */
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .link-card {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      border: 1px solid #e2eaf2;
+      text-decoration: none;
+      color: #1e293b;
+      transition: 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .link-card:hover {
+      background: #ffffff;
+      border-color: #b6d0e8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    }
+    .link-card .top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      margin-bottom: 4px;
+    }
+    .link-card .icon {
+      font-size: 1.5rem;
+      line-height: 1;
+      color: #2a6f97;
+      width: 28px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .link-card .title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #0b2a4a;
+    }
+    .link-card .desc {
+      font-size: 0.82rem;
+      color: #4a6a85;
+      line-height: 1.4;
+      margin-top: 2px;
+      padding-left: 38px;
+    }
+    .link-card .tag {
+      font-size: 0.6rem;
+      background: #e9eff8;
+      padding: 0.1rem 0.7rem;
+      border-radius: 20px;
+      color: #1f6390;
+      font-weight: 500;
+      margin-top: 6px;
+      margin-left: 38px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* --- divider --- */
+    .divider {
+      border: 0;
+      height: 2px;
+      background: linear-gradient(to right, #d4e0ec, transparent);
+      margin: 1.8rem 0 1.2rem;
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: #5d7f9a;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    .footer-note i {
+      color: #dc2626;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .container { padding: 1.5rem; }
+      h1 { font-size: 1.6rem; flex-wrap: wrap; }
+      .link-grid { grid-template-columns: 1fr; }
+      .link-card .desc { padding-left: 0; }
+      .link-card .tag { margin-left: 0; }
+    }
   </style>
 </head>
 <body>
 
-  <h1>Station 3 — AI Games & Challenges</h1>
+<div class="container">
 
-  <div style="text-align:center; margin: 20px 0;">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://mr-ellis.github.io/Spring-festival-2026/station3" alt="QR Code for Station 3">
-    <p style="font-size: 16px; color: #555;">Scan to open Station 3</p>
+  <!-- header -->
+  <h1>
+    <i class="fas fa-gamepad"></i> Station 3 — AI Games &amp; Challenges
+  </h1>
+  <div class="subhead">
+    🎮 Play and learn with these AI-powered games and coding challenges.
   </div>
 
-  <p>Play and learn with these AI-powered games:</p>
+  <!-- ===== LINK GRID ===== -->
+  <div class="link-grid">
 
-  <a href="https://studio.code.org/courses/minecraft/units/1/lessons/1/levels/1">Minecraft AI</a>
-  <a href="https://studio.code.org/courses/hero/units/1/lessons/1/levels/1">Minecraft Hero</a>
-  <a href="https://studio.code.org/courses/aquatic/units/1/lessons/1/levels/1">Minecraft Aquatic</a>
-  <a href="https://studio.code.org/courses/mc/units/1/lessons/1/levels/1">Minecraft Classic</a>
-  <a href="https://studio.code.org/flappy/1">Flappy Code</a>
+    <!-- Flappy Code -->
+    <a href="https://studio.code.org/flappy/1" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🐦</span>
+        <span class="title">Flappy Code</span>
+      </div>
+      <div class="desc">Build your own Flappy Bird game using event-driven programming.</div>
+      <span class="tag">Coding · Game</span>
+    </a>
+
+    <!-- NEW: Code.org - Dance Party -->
+    <a href="https://studio.code.org/dance" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">💃</span>
+        <span class="title">Dance Party</span>
+      </div>
+      <div class="desc">Code a fun dance party with animated characters and music.</div>
+      <span class="tag">Coding · Music</span>
+    </a>
+
+    <!-- NEW: Code.org - AI for Oceans -->
+    <a href="https://studio.code.org/s/oceans" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🐠</span>
+        <span class="title">AI for Oceans</span>
+      </div>
+      <div class="desc">Learn how AI works by training a model to clean the ocean.</div>
+      <span class="tag">AI · Environment</span>
+    </a>
+
+    <!-- NEW: Google Experiments - Shadow Art -->
+    <a href="https://experiments.withgoogle.com/shadow-art" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🖐️</span>
+        <span class="title">Shadow Art</span>
+      </div>
+      <div class="desc">Use hand gestures to create shadow puppets with AI.</div>
+      <span class="tag">Gesture · Fun</span>
+    </a>
+
+    <!-- NEW: Google Experiments - Move Mirror -->
+    <a href="https://experiments.withgoogle.com/move-mirror" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🕺</span>
+        <span class="title">Move Mirror</span>
+      </div>
+      <div class="desc">Match your pose with images from around the world.</div>
+      <span class="tag">Movement · Game</span>
+    </a>
+
+    <!-- NEW: Google Experiments - Semi-Conductor -->
+    <a href="https://experiments.withgoogle.com/semi-conductor" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🎻</span>
+        <span class="title">Semi-Conductor</span>
+      </div>
+      <div class="desc">Conduct an orchestra using your webcam and hand movements.</div>
+      <span class="tag">Music · Gesture</span>
+    </a>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- Simplified footer -->
+  <div class="footer-note">
+    <span><i class="fas fa-robot"></i> Fun challenges to learn coding and AI concepts.</span>
+    <span><i class="fas fa-heart" style="color:#dc2626;"></i> Play and learn!</span>
+  </div>
+
+</div>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </body>
 </html>
-
-
