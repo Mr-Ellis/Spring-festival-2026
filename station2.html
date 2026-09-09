@@ -1,32 +1,261 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Station 2 — AI Literacy: Spot the Fake</title>
   <style>
-    body { font-family: Arial; padding: 20px; background: #DDEBF7; }
-    h1 { color: #444; }
-    a { display: block; margin: 10px 0; font-size: 18px; }
+    /* --- consistent with school site style --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4fb;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      border: 1px solid #e5edf5;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0b2a4a;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    h1 i {
+      color: #059669;
+    }
+
+    .subhead {
+      color: #475569;
+      font-size: 1.05rem;
+      border-left: 4px solid #059669;
+      padding-left: 1rem;
+      margin-bottom: 1.8rem;
+      font-weight: 400;
+    }
+
+    /* --- link grid (cards) --- */
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .link-card {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      border: 1px solid #e2eaf2;
+      text-decoration: none;
+      color: #1e293b;
+      transition: 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .link-card:hover {
+      background: #ffffff;
+      border-color: #b6d0e8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    }
+    .link-card .top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      margin-bottom: 4px;
+    }
+    .link-card .icon {
+      font-size: 1.5rem;
+      line-height: 1;
+      color: #2a6f97;
+      width: 28px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .link-card .title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #0b2a4a;
+    }
+    .link-card .desc {
+      font-size: 0.82rem;
+      color: #4a6a85;
+      line-height: 1.4;
+      margin-top: 2px;
+      padding-left: 38px;
+    }
+    .link-card .tag {
+      font-size: 0.6rem;
+      background: #e9eff8;
+      padding: 0.1rem 0.7rem;
+      border-radius: 20px;
+      color: #1f6390;
+      font-weight: 500;
+      margin-top: 6px;
+      margin-left: 38px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* --- divider --- */
+    .divider {
+      border: 0;
+      height: 2px;
+      background: linear-gradient(to right, #d4e0ec, transparent);
+      margin: 1.8rem 0 1.2rem;
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: #5d7f9a;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    .footer-note i {
+      color: #dc2626;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .container { padding: 1.5rem; }
+      h1 { font-size: 1.6rem; flex-wrap: wrap; }
+      .link-grid { grid-template-columns: 1fr; }
+      .link-card .desc { padding-left: 0; }
+      .link-card .tag { margin-left: 0; }
+    }
   </style>
 </head>
 <body>
 
-  <h1>Station 2 — AI Literacy: Spot the Fake</h1>
+<div class="container">
 
-  <div style="text-align:center; margin: 20px 0;">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://mr-ellis.github.io/Spring-festival-2026/station2" alt="QR Code for Station 2">
-    <p style="font-size: 16px; color: #555;">Scan to open Station 2</p>
+  <!-- header -->
+  <h1>
+    <i class="fas fa-search"></i> Station 2 — AI Literacy: Spot the Fake
+  </h1>
+  <div class="subhead">
+    🧠 Can you tell what's real and what's AI? Try these interactive games and tools.
   </div>
 
-  <p>Can you tell what's real and what's AI?</p>
+  <!-- ===== LINK GRID ===== -->
+  <div class="link-grid">
 
-  <a href="https://www.commonsense.org/games/two-truths-and-ai">Two Truths and AI</a>
-  <a href="https://sightengine.com/ai-or-not">AI or Not</a>
-  <a href="https://saywhatyousee.ai">Say What You See</a>
-  <a href="https://oddoneout.ai">Odd One Out</a>
-  <a href="https://guess-the-line.ai">Guess the Line</a>
-  <a href="https://research.google/ai-quests/intl/en_us">AI Quests</a>
-  <a href="https://realorai.dev">Real or AI?</a>
+    <!-- Common Sense: Two Truths and AI -->
+    <a href="https://www.commonsense.org/games/two-truths-and-ai" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🔍</span>
+        <span class="title">Two Truths and AI</span>
+      </div>
+      <div class="desc">A game from Common Sense Media to help you spot AI-generated content.</div>
+      <span class="tag">Game · Media Literacy</span>
+    </a>
+
+    <!-- SightEngine: AI or Not -->
+    <a href="https://sightengine.com/ai-or-not" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">📸</span>
+        <span class="title">AI or Not</span>
+      </div>
+      <div class="desc">Upload an image or paste a URL to detect if it was generated by AI.</div>
+      <span class="tag">Tool · Detection</span>
+    </a>
+
+    <!-- Google Arts & Culture: Say What You See (working link) -->
+    <a href="https://artsandculture.google.com/experiment/jwG3m7wQShZngw" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">👀</span>
+        <span class="title">Say What You See</span>
+      </div>
+      <div class="desc">Learn the art of image prompting by describing AI-generated images.</div>
+      <span class="tag">Game · Prompting</span>
+    </a>
+
+    <!-- Google Arts & Culture: Odd One Out (working link) -->
+    <a href="https://artsandculture.google.com/experiment/wAHNn4JsVTFOiw" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🕵️</span>
+        <span class="title">Odd One Out</span>
+      </div>
+      <div class="desc">Spot the AI-generated "imposter" hidden among real artworks.</div>
+      <span class="tag">Game · Art</span>
+    </a>
+
+    <!-- Google AI Quests -->
+    <a href="https://research.google/ai-quests/intl/en_us" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🗺️</span>
+        <span class="title">AI Quests</span>
+      </div>
+      <div class="desc">Interactive quests from Google Research to learn about AI concepts.</div>
+      <span class="tag">Quests · Learning</span>
+    </a>
+
+    <!-- Real or AI? -->
+    <a href="https://realorai.dev" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🤔</span>
+        <span class="title">Real or AI?</span>
+      </div>
+      <div class="desc">Challenge yourself to identify whether images are real or AI-generated.</div>
+      <span class="tag">Game · Images</span>
+    </a>
+
+    <!-- NEW: Google Arts & Culture: Instrument Playground (creative alternative) -->
+    <a href="https://artsandculture.google.com/experiment/8QFo2oQr2uT3pg" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🎵</span>
+        <span class="title">Instrument Playground</span>
+      </div>
+      <div class="desc">Generate music with AI and explore how creative AI works.</div>
+      <span class="tag">Music · Creative</span>
+    </a>
+
+    <!-- NEW: Quick Draw! (fun way to see AI in action) -->
+    <a href="https://quickdraw.withgoogle.com/?locale=en_US" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">✏️</span>
+        <span class="title">Quick, Draw!</span>
+      </div>
+      <div class="desc">Draw a doodle and watch the AI try to recognize it in 20 seconds.</div>
+      <span class="tag">Game · Drawing</span>
+    </a>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- Simplified footer -->
+  <div class="footer-note">
+    <span><i class="fas fa-robot"></i> Learn to spot the difference between real and AI-generated content.</span>
+    <span><i class="fas fa-heart" style="color:#dc2626;"></i> Stay curious!</span>
+  </div>
+
+</div>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </body>
 </html>
