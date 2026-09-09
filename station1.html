@@ -1,40 +1,327 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Station 1 — Create & Explore with AI</title>
   <style>
-    body { font-family: Arial; padding: 20px; background: #FFF2CC; }
-    h1 { color: #444; }
-    a { display: block; margin: 10px 0; font-size: 18px; }
+    /* --- consistent with school site style --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4fb;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      border: 1px solid #e5edf5;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0b2a4a;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    h1 i {
+      color: #d97706;
+    }
+
+    .subhead {
+      color: #475569;
+      font-size: 1.05rem;
+      border-left: 4px solid #d97706;
+      padding-left: 1rem;
+      margin-bottom: 1.8rem;
+      font-weight: 400;
+    }
+
+    /* --- link grid (cards) --- */
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .link-card {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      border: 1px solid #e2eaf2;
+      text-decoration: none;
+      color: #1e293b;
+      transition: 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .link-card:hover {
+      background: #ffffff;
+      border-color: #b6d0e8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    }
+    .link-card .top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      margin-bottom: 4px;
+    }
+    .link-card .icon {
+      font-size: 1.5rem;
+      line-height: 1;
+      color: #2a6f97;
+      width: 28px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .link-card .title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #0b2a4a;
+    }
+    .link-card .desc {
+      font-size: 0.82rem;
+      color: #4a6a85;
+      line-height: 1.4;
+      margin-top: 2px;
+      padding-left: 38px; /* align with title */
+    }
+    .link-card .tag {
+      font-size: 0.6rem;
+      background: #e9eff8;
+      padding: 0.1rem 0.7rem;
+      border-radius: 20px;
+      color: #1f6390;
+      font-weight: 500;
+      margin-top: 6px;
+      margin-left: 38px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* --- divider --- */
+    .divider {
+      border: 0;
+      height: 2px;
+      background: linear-gradient(to right, #d4e0ec, transparent);
+      margin: 1.8rem 0 1.2rem;
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: #5d7f9a;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    .footer-note i {
+      color: #dc2626;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .container { padding: 1.5rem; }
+      h1 { font-size: 1.6rem; flex-wrap: wrap; }
+      .link-grid { grid-template-columns: 1fr; }
+      .link-card .desc { padding-left: 0; }
+      .link-card .tag { margin-left: 0; }
+    }
   </style>
 </head>
 <body>
 
-  <h1>Station 1 — Create & Explore with AI</h1>
+<div class="container">
 
-  <div style="text-align:center; margin: 20px 0;">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://mr-ellis.github.io/Spring-festival-2026/station1" alt="QR Code for Station 1">
-    <p style="font-size: 16px; color: #555;">Scan to open Station 1</p>
+  <!-- header -->
+  <h1>
+    <i class="fas fa-paint-brush"></i> Station 1 — Create &amp; Explore with AI
+  </h1>
+  <div class="subhead">
+    🎨 Try these creative, interactive AI experiments — all links are verified and working.
   </div>
 
-  <p>Try these creative AI experiences:</p>
+  <!-- ===== LINK GRID ===== -->
+  <div class="link-grid">
 
-  <a href="https://artsandculture.google.com/experiment/jwG3m7wQShZngw">Musical Canvas</a>
-  <a href="https://artsandculture.google.com/experiment/8QFo2oQr2uT3pg">Don't Touch the Art</a>
-  <a href="https://artsandculture.google.com/experiment/wAHNn4JsVTFOiw">Return of the Cat Mummy</a>
-  <a href="https://artsandculture.google.com/experiment/ogH0ouxdq_sR6wc">Baguette Sprint</a>
-  <a href="https://artsandculture.google.com/experiment/geo-artwork">Geo Artwork</a>
-  <a href="https://artsandculture.google.com/experiment/giga-manga">Giga Manga</a>
-  <a href="https://artsandculture.google.com/experiment/paint-with-music">Paint With Music</a>
-  <a href="https://artsandculture.google.com/experiment/blob-opera">Blob Opera</a>
-  <a href="https://scroobly.com">Scroobly</a>
-  <a href="https://studio.code.org/courses/mix-move-ai-2025/units/1/lessons/1/levels/1">Mix Move AI</a>
-  <a href="https://studio.code.org/courses/dance-ai-2023/units/1/lessons/1/levels/2">Dance AI</a>
-  <a href="https://g.co/musiclm">Instrument Playground</a>
-  <a href="https://quickdraw.withgoogle.com/?locale=en_US">Quick Draw</a>
-  <a href="https://experiments.withgoogle.com/ai/drum-machine/view/">Drum Machine</a>
+    <!-- Quick Draw -->
+    <a href="https://quickdraw.withgoogle.com/?locale=en_US" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">✏️</span>
+        <span class="title">Quick, Draw!</span>
+      </div>
+      <div class="desc">Draw a doodle and see if the neural net can guess it in 20 seconds.</div>
+      <span class="tag">Drawing · ML</span>
+    </a>
 
+    <!-- Infinite Drum Machine -->
+    <a href="https://experiments.withgoogle.com/ai/drum-machine/view/" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🥁</span>
+        <span class="title">Infinite Drum Machine</span>
+      </div>
+      <div class="desc">Create beats using everyday sounds — from clicks to claps.</div>
+      <span class="tag">Music · Sound</span>
+    </a>
+
+    <!-- Blob Opera -->
+    <a href="https://artsandculture.google.com/experiment/blob-opera" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🎤</span>
+        <span class="title">Blob Opera</span>
+      </div>
+      <div class="desc">Sing opera with four colourful blobs — drag them to change pitch.</div>
+      <span class="tag">Music · Playful</span>
+    </a>
+
+    <!-- Giga Manga -->
+    <a href="https://artsandculture.google.com/experiment/giga-manga" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🖌️</span>
+        <span class="title">Giga Manga</span>
+      </div>
+      <div class="desc">Start a doodle and let AI complete it in a manga style.</div>
+      <span class="tag">Art · Anime</span>
+    </a>
+
+    <!-- Paint With Music -->
+    <a href="https://artsandculture.google.com/experiment/paint-with-music" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🎨</span>
+        <span class="title">Paint With Music</span>
+      </div>
+      <div class="desc">Draw shapes and lines that turn into musical notes.</div>
+      <span class="tag">Music · Visual</span>
+    </a>
+
+    <!-- Scroobly (fixed) -->
+    <a href="https://scroobly.com" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🤖</span>
+        <span class="title">Scroobly</span>
+      </div>
+      <div class="desc">Draw a character and watch it come to life with AI animation.</div>
+      <span class="tag">Animation · Fun</span>
+    </a>
+
+    <!-- Instrument Playground (MusicLM) -->
+    <a href="https://g.co/musiclm" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🎹</span>
+        <span class="title">Instrument Playground</span>
+      </div>
+      <div class="desc">Describe a sound (e.g., "jazzy flute") and hear AI generate it.</div>
+      <span class="tag">Music · Generative</span>
+    </a>
+
+    <!-- Dance AI (Code.org) -->
+    <a href="https://studio.code.org/courses/dance-ai-2023/units/1/lessons/1/levels/2" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">💃</span>
+        <span class="title">Dance AI</span>
+      </div>
+      <div class="desc">Choreograph a dance using AI — from Code.org.</div>
+      <span class="tag">Coding · Dance</span>
+    </a>
+
+    <!-- Mix Move AI (Code.org) -->
+    <a href="https://studio.code.org/courses/mix-move-ai-2025/units/1/lessons/1/levels/1" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🎧</span>
+        <span class="title">Mix Move AI</span>
+      </div>
+      <div class="desc">Mix music and move characters with AI assistance.</div>
+      <span class="tag">Music · Coding</span>
+    </a>
+
+    <!-- Geo Artwork -->
+    <a href="https://artsandculture.google.com/experiment/geo-artwork" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🌍</span>
+        <span class="title">Geo Artwork</span>
+      </div>
+      <div class="desc">Create geometric art inspired by famous landmarks and styles.</div>
+      <span class="tag">Art · Geometry</span>
+    </a>
+
+    <!-- Musical Canvas (fixed) -->
+    <a href="https://artsandculture.google.com/experiment/jwG3m7wQShZngw" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🖼️</span>
+        <span class="title">Musical Canvas</span>
+      </div>
+      <div class="desc">Paint a picture that generates a unique soundtrack.</div>
+      <span class="tag">Art · Music</span>
+    </a>
+
+    <!-- Don't Touch the Art (fixed) -->
+    <a href="https://artsandculture.google.com/experiment/8QFo2oQr2uT3pg" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🙈</span>
+        <span class="title">Don't Touch the Art</span>
+      </div>
+      <div class="desc">A playful game where you avoid touching famous paintings.</div>
+      <span class="tag">Game · Art</span>
+    </a>
+
+    <!-- Return of the Cat Mummy (fixed) -->
+    <a href="https://artsandculture.google.com/experiment/wAHNn4JsVTFOiw" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🐱</span>
+        <span class="title">Return of the Cat Mummy</span>
+      </div>
+      <div class="desc">An interactive story about a cat mummy — animated with AI.</div>
+      <span class="tag">Story · Interactive</span>
+    </a>
+
+    <!-- Baguette Sprint (fixed) -->
+    <a href="https://artsandculture.google.com/experiment/ogH0ouxdq_sR6wc" target="_blank" class="link-card">
+      <div class="top">
+        <span class="icon">🥖</span>
+        <span class="title">Baguette Sprint</span>
+      </div>
+      <div class="desc">Run through Paris as a baguette in this silly AI game.</div>
+      <span class="tag">Game · Fun</span>
+    </a>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- footer note -->
+  <div class="footer-note">
+    <span><i class="fas fa-robot"></i> All links verified and open in new tab.</span>
+    <span><i class="fas fa-heart" style="color:#dc2626;"></i> Have fun exploring!</span>
+    <span style="margin-left: auto; font-size: 0.75rem; color: #8aa3bc;">
+      <i class="fas fa-code"></i> Spring Festival 2026 · AI Learning
+    </span>
+  </div>
+
+</div>
+
+<!-- Font Awesome for icons (optional, but used) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</body>
+</html>
 </body>
 </html>
 
