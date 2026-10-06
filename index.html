@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Learning Hub · Spring Festival 2026</title>
-    <!-- Font Awesome Icons (same as your school site) -->
+    <title>ISR Open House · AI Learning Hub</title>
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* --- RESET & GLOBAL (matches your school site) --- */
+        /* --- RESET & GLOBAL --- */
         * {
             margin: 0;
             padding: 0;
@@ -19,10 +19,83 @@
             min-height: 100vh;
         }
 
-        /* --- HERO (same gradient & style as school site, but with AI theme) --- */
+        /* --- ISR LOGO INTEGRATION (clean, prominent, motivational) --- */
+        .isr-brand {
+            background: #ffffff;
+            padding: 0.8rem 2rem 0.6rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid #f2b705;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+        }
+        .isr-logo-group {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .isr-logo-group svg {
+            height: 70px;
+            width: auto;
+            display: block;
+        }
+        .isr-badge {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        .isr-badge .school-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a2c4e;
+            letter-spacing: -0.02em;
+        }
+        .isr-badge .school-sub {
+            font-size: 0.9rem;
+            color: #3c5a7a;
+            font-weight: 400;
+        }
+        .isr-badge .campuses {
+            display: flex;
+            gap: 0.4rem;
+            margin-top: 0.2rem;
+        }
+        .isr-badge .campuses span {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.15rem 1rem;
+            border-radius: 30px;
+            color: white;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+        .kindergarten-badge { background: #f2b705; }
+        .elementary-badge { background: #1e5fb4; }
+        .secondary-badge { background: #d93b2b; }
+
+        .open-house-tag {
+            background: #ffd966;
+            color: #1a2c4e;
+            font-weight: 700;
+            padding: 0.5rem 1.6rem;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 10px rgba(242, 183, 5, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .open-house-tag i {
+            color: #b1620a;
+        }
+
+        /* --- HERO (ISR Open House, festive & motivating) --- */
         .hero {
             background: linear-gradient(135deg, #0b2a4a 0%, #1a4a7a 100%);
-            padding: 3rem 2rem 2.5rem;
+            padding: 3rem 2rem 2.8rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -39,7 +112,7 @@
         }
         .hero h1 {
             color: #fff;
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 700;
             letter-spacing: -0.02em;
             margin-bottom: 0.3rem;
@@ -48,25 +121,40 @@
         }
         .hero h1 i { 
             color: #7bb3ff; 
-            margin-right: 10px; 
+            margin-right: 12px; 
         }
         .hero p {
             color: #c0d9f0;
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 0.5rem;
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 0.8rem;
             position: relative;
             z-index: 1;
+            font-weight: 400;
+        }
+        .hero .sub-motivation {
+            color: #ffd966;
+            font-size: 1.1rem;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.08);
+            display: inline-block;
+            padding: 0.4rem 2rem;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            margin-top: 0.6rem;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(255, 215, 102, 0.3);
         }
 
-        /* --- CONTAINER (matches school site) --- */
+        /* --- CONTAINER --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 1.5rem 1.5rem 2rem;
         }
 
-        /* --- SECTION TITLES (same as school site) --- */
+        /* --- SECTION TITLES --- */
         .section-title {
             font-size: 1.6rem;
             font-weight: 700;
@@ -85,7 +173,7 @@
             margin-bottom: 1.2rem;
         }
 
-        /* --- STATION GRID (replaces button menu) --- */
+        /* --- STATION GRID (AI Learning Stations) --- */
         .station-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -111,7 +199,7 @@
         .station-card:hover {
             transform: translateY(-4px);
             border-color: #b6d0e8;
-            box-shadow: 0 8px 24px rgba(0,32,64,0.08);
+            box-shadow: 0 12px 28px rgba(0,32,64,0.12);
         }
         .station-card .icon {
             font-size: 2.6rem;
@@ -140,13 +228,13 @@
             color: #2a6f97; 
         }
 
-        /* individual card accent colours (like year cards) */
+        /* individual card accent colours */
         .station-card:nth-child(1) .icon { color: #d97706; }
         .station-card:nth-child(2) .icon { color: #059669; }
         .station-card:nth-child(3) .icon { color: #2563eb; }
         .station-card:nth-child(4) .icon { color: #7c3aed; }
 
-        /* --- DIVIDER (matches school site) --- */
+        /* --- DIVIDER --- */
         .divider {
             border: 0;
             height: 2px;
@@ -154,30 +242,157 @@
             margin: 2.2rem 0 1.5rem;
         }
 
-        /* --- responsive (matches school site) --- */
+        /* --- RESOURCE CARDS (inline styled, but consistent) --- */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        .resource-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1.2rem;
+            border: 1px solid #e5edf5;
+            text-decoration: none;
+            color: #1e293b;
+            transition: 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .resource-card:hover {
+            transform: translateY(-3px);
+            border-color: #b6d0e8;
+            box-shadow: 0 8px 20px rgba(0,32,64,0.06);
+        }
+        .resource-card .res-icon {
+            font-size: 1.6rem;
+            color: #2a6f97;
+            margin-bottom: 0.2rem;
+        }
+        .resource-card h5 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #0b2a4a;
+            margin-bottom: 0.1rem;
+        }
+        .resource-card p {
+            font-size: 0.8rem;
+            color: #4a6a85;
+            margin: 0.1rem 0 0.4rem;
+            line-height: 1.4;
+        }
+        .resource-tag {
+            font-size: 0.6rem;
+            background: #e9eff8;
+            padding: 0.1rem 0.7rem;
+            border-radius: 20px;
+            color: #1f6390;
+            font-weight: 500;
+            margin-top: 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        /* --- FOOTER / MOTIVATION --- */
+        .open-house-footer {
+            text-align: center;
+            margin-top: 2.8rem;
+            padding: 1.8rem 1rem 2rem;
+            background: linear-gradient(to right, #eef3fa, #ffffff);
+            border-radius: 40px;
+            color: #1e3a5f;
+            font-weight: 500;
+            border: 1px solid #d9e6f2;
+        }
+        .open-house-footer i {
+            color: #f2b705;
+            margin: 0 0.2rem;
+        }
+        .open-house-footer .big {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0b2a4a;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- responsive --- */
+        @media (max-width: 780px) {
+            .isr-brand {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+                padding: 1rem 1.5rem;
+            }
+            .open-house-tag {
+                align-self: flex-start;
+            }
+            .isr-logo-group svg {
+                height: 55px;
+            }
+        }
         @media (max-width: 680px) {
-            .hero h1 { font-size: 2rem; }
+            .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1rem; }
             .station-grid { grid-template-columns: 1fr; }
             .section-title { font-size: 1.3rem; }
+            .isr-badge .school-name { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO (exactly like your school site, but AI themed) -->
+    <!-- ===== ISR LOGO & OPEN HOUSE BADGE (replaces generic top) ===== -->
+    <div class="isr-brand">
+        <div class="isr-logo-group">
+            <!-- SVG representation of the ISR logo (matching provided description) -->
+            <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" aria-label="ISR International School on the Rhine">
+                <!-- Large ISR letters in dark blue -->
+                <text x="10" y="95" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="130" fill="#1a2c4e" letter-spacing="-4">ISR</text>
+                <!-- Subtext lines -->
+                <text x="8" y="118" font-family="'Segoe UI', Arial, sans-serif" font-weight="400" font-size="18" fill="#1a2c4e">International School</text>
+                <text x="8" y="138" font-family="'Segoe UI', Arial, sans-serif" font-weight="400" font-size="18" fill="#1a2c4e">on the Rhine · Neuss</text>
+                <!-- Colored bars for Kindergarten, Elementary, Secondary (simplified inline) -->
+                <rect x="8" y="148" width="92" height="22" rx="4" fill="#f2b705" />
+                <text x="14" y="163" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#1a2c4e">KINDERGARTEN</text>
+                <rect x="105" y="148" width="100" height="22" rx="4" fill="#1e5fb4" />
+                <text x="112" y="163" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#ffffff">ELEMENTARY</text>
+                <rect x="210" y="148" width="100" height="22" rx="4" fill="#d93b2b" />
+                <text x="217" y="163" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#ffffff">SECONDARY</text>
+            </svg>
+            <div class="isr-badge">
+                <span class="school-name">International School on the Rhine</span>
+                <span class="school-sub">Neuss · Germany</span>
+                <div class="campuses">
+                    <span class="kindergarten-badge">Kindergarten</span>
+                    <span class="elementary-badge">Elementary</span>
+                    <span class="secondary-badge">Secondary</span>
+                </div>
+            </div>
+        </div>
+        <div class="open-house-tag">
+            <i class="fas fa-door-open"></i> ISR Open House · 2026
+        </div>
+    </div>
+
+    <!-- ===== HERO (Exciting, motivational, AI-themed) ===== -->
     <section class="hero">
         <h1><i class="fas fa-brain"></i> AI Learning Hub</h1>
         <p>Explore artificial intelligence through interactive stations — create, question, play, and understand.</p>
+        <div class="sub-motivation">
+            <i class="fas fa-star"></i> Open House · Discover, play, and imagine the future <i class="fas fa-star"></i>
+        </div>
     </section>
 
     <div class="container">
 
-        <!-- ===== AI STATIONS (replaces the old button menu) ===== -->
+        <!-- ===== AI STATIONS ===== -->
         <div class="section-title">
             <i class="fas fa-cube"></i> Learning Stations
         </div>
-        <div class="section-desc">Choose a station to start your AI journey.</div>
+        <div class="section-desc">Choose a station to start your AI journey — designed for curious minds of all ages.</div>
 
         <div class="station-grid">
             <!-- Station 1 -->
@@ -212,42 +427,49 @@
 
         <hr class="divider">
 
-        <!-- ===== EXTRA RESOURCES (same style as your school site) ===== -->
+        <!-- ===== EXTRA AI RESOURCES ===== -->
         <div class="section-title">
             <i class="fas fa-link"></i> Extra AI Resources
         </div>
-        <div class="section-desc">Tools, datasets, and projects to continue your AI learning.</div>
+        <div class="section-desc">Tools, datasets, and projects to continue your AI learning — for families and students.</div>
 
-        <!-- Resource cards in a grid (matching the school site's resource grid) -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 0.5rem;">
-            
-            <a href="https://teachablemachine.withgoogle.com/" target="_blank" style="background: #fff; border-radius: 16px; padding: 1.2rem; border: 1px solid #e5edf5; text-decoration: none; color: #1e293b; transition: 0.2s; display: flex; flex-direction: column; align-items: flex-start;">
-                <span style="font-size: 1.6rem; color: #2a6f97; margin-bottom: 0.2rem;"><i class="fas fa-microchip"></i></span>
-                <h5 style="font-size: 0.95rem; font-weight: 600; color: #0b2a4a; margin-bottom: 0.1rem;">Teachable Machine</h5>
-                <p style="font-size: 0.8rem; color: #4a6a85; margin: 0.1rem 0 0.2rem; line-height: 1.4;">Train your own AI models in your browser.</p>
-                <span style="font-size: 0.6rem; background: #e9eff8; padding: 0.1rem 0.7rem; border-radius: 20px; color: #1f6390; font-weight: 500; margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.3px;">ML · Hands-on</span>
+        <div class="resource-grid">
+            <a href="https://teachablemachine.withgoogle.com/" target="_blank" class="resource-card">
+                <span class="res-icon"><i class="fas fa-microchip"></i></span>
+                <h5>Teachable Machine</h5>
+                <p>Train your own AI models in your browser.</p>
+                <span class="resource-tag">ML · Hands-on</span>
             </a>
 
-            <a href="https://experiments.withgoogle.com/collection/ai" target="_blank" style="background: #fff; border-radius: 16px; padding: 1.2rem; border: 1px solid #e5edf5; text-decoration: none; color: #1e293b; transition: 0.2s; display: flex; flex-direction: column; align-items: flex-start;">
-                <span style="font-size: 1.6rem; color: #2a6f97; margin-bottom: 0.2rem;"><i class="fas fa-flask"></i></span>
-                <h5 style="font-size: 0.95rem; font-weight: 600; color: #0b2a4a; margin-bottom: 0.1rem;">Google AI Experiments</h5>
-                <p style="font-size: 0.8rem; color: #4a6a85; margin: 0.1rem 0 0.2rem; line-height: 1.4;">Play with AI through art, music, and coding.</p>
-                <span style="font-size: 0.6rem; background: #e9eff8; padding: 0.1rem 0.7rem; border-radius: 20px; color: #1f6390; font-weight: 500; margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.3px;">Explore · Fun</span>
+            <a href="https://experiments.withgoogle.com/collection/ai" target="_blank" class="resource-card">
+                <span class="res-icon"><i class="fas fa-flask"></i></span>
+                <h5>Google AI Experiments</h5>
+                <p>Play with AI through art, music, and coding.</p>
+                <span class="resource-tag">Explore · Fun</span>
             </a>
 
-            <a href="https://www.kaggle.com/learn" target="_blank" style="background: #fff; border-radius: 16px; padding: 1.2rem; border: 1px solid #e5edf5; text-decoration: none; color: #1e293b; transition: 0.2s; display: flex; flex-direction: column; align-items: flex-start;">
-                <span style="font-size: 1.6rem; color: #2a6f97; margin-bottom: 0.2rem;"><i class="fas fa-database"></i></span>
-                <h5 style="font-size: 0.95rem; font-weight: 600; color: #0b2a4a; margin-bottom: 0.1rem;">Kaggle Learn</h5>
-                <p style="font-size: 0.8rem; color: #4a6a85; margin: 0.1rem 0 0.2rem; line-height: 1.4;">Free courses on Python, ML, and data science.</p>
-                <span style="font-size: 0.6rem; background: #e9eff8; padding: 0.1rem 0.7rem; border-radius: 20px; color: #1f6390; font-weight: 500; margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.3px;">Courses · Data</span>
+            <a href="https://www.kaggle.com/learn" target="_blank" class="resource-card">
+                <span class="res-icon"><i class="fas fa-database"></i></span>
+                <h5>Kaggle Learn</h5>
+                <p>Free courses on Python, ML, and data science.</p>
+                <span class="resource-tag">Courses · Data</span>
             </a>
 
-            <a href="https://www.aiunplugged.org/" target="_blank" style="background: #fff; border-radius: 16px; padding: 1.2rem; border: 1px solid #e5edf5; text-decoration: none; color: #1e293b; transition: 0.2s; display: flex; flex-direction: column; align-items: flex-start;">
-                <span style="font-size: 1.6rem; color: #2a6f97; margin-bottom: 0.2rem;"><i class="fas fa-puzzle-piece"></i></span>
-                <h5 style="font-size: 0.95rem; font-weight: 600; color: #0b2a4a; margin-bottom: 0.1rem;">AI Unplugged</h5>
-                <p style="font-size: 0.8rem; color: #4a6a85; margin: 0.1rem 0 0.2rem; line-height: 1.4;">Offline activities to learn AI concepts without a computer.</p>
-                <span style="font-size: 0.6rem; background: #e9eff8; padding: 0.1rem 0.7rem; border-radius: 20px; color: #1f6390; font-weight: 500; margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.3px;">Unplugged · Activities</span>
+            <a href="https://www.aiunplugged.org/" target="_blank" class="resource-card">
+                <span class="res-icon"><i class="fas fa-puzzle-piece"></i></span>
+                <h5>AI Unplugged</h5>
+                <p>Offline activities to learn AI concepts without a computer.</p>
+                <span class="resource-tag">Unplugged · Activities</span>
             </a>
+        </div>
+
+        <!-- ===== MOTIVATIONAL FOOTER ===== -->
+        <div class="open-house-footer">
+            <span class="big"><i class="fas fa-lightbulb"></i> Curiosity starts here</span>
+            <i class="fas fa-arrow-right"></i> Visit every station, ask questions, and imagine what you can create with AI <i class="fas fa-arrow-left"></i>
+            <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #2a4b6e;">
+                <i class="fas fa-calendar-alt"></i> ISR Open House · Spring Festival 2026 · We can't wait to welcome you!
+            </div>
         </div>
 
     </div>
