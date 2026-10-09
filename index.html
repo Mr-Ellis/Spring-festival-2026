@@ -17,62 +17,63 @@
             min-height: 100vh;
         }
 
-        /* ---------- ISR LOGO (stacked vertical — matches first image) ---------- */
+        /* ---------- ISR LOGO (compact, ~1/6 scale) ---------- */
         .isr-brand {
             background: #ffffff;
-            padding: 28px 32px 0 32px;
+            padding: 14px 24px 0 24px;
             position: relative;
             z-index: 20;
             display: flex;
-            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
         }
 
         .isr-logo {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            max-width: 420px;
-            width: 100%;
+            max-width: 130px;
         }
 
-        /* Big "ISR" letters */
+        /* Small "ISR" letters */
         .isr-letters {
             font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             font-weight: 900;
-            font-size: 110px;
+            font-size: 34px;
             color: #1a2c4e;
-            letter-spacing: -5px;
-            line-height: 0.82;
-            margin-bottom: 10px;
+            letter-spacing: -1.5px;
+            line-height: 0.85;
+            margin-bottom: 3px;
         }
 
-        /* Full school name (two lines) */
+        /* Small school name */
         .isr-fullname {
             font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             font-weight: 400;
-            font-size: 30px;
+            font-size: 9px;
             color: #1a2c4e;
-            line-height: 1.15;
-            letter-spacing: -0.5px;
-            margin-bottom: 16px;
+            line-height: 1.2;
+            letter-spacing: -0.1px;
+            margin-bottom: 5px;
         }
 
-        /* Three colored bars at the bottom */
+        /* Small three colored bars */
         .isr-bars {
             display: flex;
             width: 100%;
-            border-radius: 2px;
+            border-radius: 1px;
             overflow: hidden;
-            margin-bottom: 0;
         }
 
         .isr-bar {
             flex: 1;
-            padding: 10px 4px;
+            padding: 3px 1px;
             text-align: center;
-            font-size: 13px;
+            font-size: 4.5px;
             font-weight: 700;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.2px;
             text-transform: uppercase;
             white-space: nowrap;
         }
@@ -81,17 +82,14 @@
         .bar-el  { background: #1e5fb4; color: #ffffff; }
         .bar-sec { background: #d93b2b; color: #ffffff; }
 
-        /* Open House badge floating on the right of the logo band */
+        /* Open House badge */
         .open-house-tag {
-            position: absolute;
-            top: 32px;
-            right: 40px;
             background: linear-gradient(135deg, #ffd966, #ffb347);
             color: #1a2c4e;
             font-weight: 800;
-            padding: 10px 22px;
+            padding: 8px 18px;
             border-radius: 50px;
-            font-size: 14px;
+            font-size: 13px;
             letter-spacing: 0.4px;
             box-shadow: 0 4px 14px rgba(242, 183, 5, 0.45);
             display: flex;
@@ -110,9 +108,9 @@
             content: '';
             position: absolute;
             left: 0;
-            bottom: -4px;
+            bottom: -3px;
             width: 100%;
-            height: 4px;
+            height: 3px;
             background: #f2b705;
         }
 
@@ -514,29 +512,20 @@
         }
 
         /* ---------- RESPONSIVE ---------- */
-        @media (max-width: 900px) {
-            .isr-letters { font-size: 90px; }
-            .isr-fullname { font-size: 24px; }
-            .isr-bar { font-size: 11px; padding: 9px 3px; }
-        }
-
         @media (max-width: 700px) {
-            .isr-brand { padding: 22px 20px 0 20px; }
-
-            .open-house-tag {
-                position: static;
-                align-self: flex-end;
-                margin-top: 12px;
-                font-size: 12px;
-                padding: 8px 16px;
+            .isr-brand {
+                flex-direction: row;
+                align-items: center;
+                padding: 12px 18px 0 18px;
+                gap: 10px;
             }
 
-            .isr-brand { flex-direction: column; align-items: center; }
+            .isr-letters { font-size: 28px; letter-spacing: -1px; }
+            .isr-fullname { font-size: 8px; }
+            .isr-bar { font-size: 4px; padding: 2.5px 1px; }
+            .isr-logo { max-width: 105px; }
 
-            .isr-letters { font-size: 72px; letter-spacing: -3px; }
-            .isr-fullname { font-size: 20px; }
-            .isr-bars { flex-wrap: nowrap; }
-            .isr-bar { font-size: 9px; padding: 8px 2px; letter-spacing: 0.3px; }
+            .open-house-tag { font-size: 11px; padding: 6px 14px; }
 
             .hero h1 { font-size: 1.8rem; }
             .hero p { font-size: 0.95rem; }
@@ -552,9 +541,12 @@
         }
 
         @media (max-width: 480px) {
-            .isr-letters { font-size: 58px; }
-            .isr-fullname { font-size: 16px; }
-            .isr-bar { font-size: 8px; padding: 7px 2px; }
+            .isr-letters { font-size: 24px; }
+            .isr-fullname { font-size: 7px; }
+            .isr-bar { font-size: 3.5px; }
+            .isr-logo { max-width: 90px; }
+            .open-house-tag { font-size: 10px; padding: 5px 12px; }
+
             .station-grid { grid-template-columns: 1fr; }
             .resource-grid { grid-template-columns: 1fr; }
         }
@@ -570,7 +562,7 @@
     <!-- ===== FLOATING PARTICLES ===== -->
     <div class="particles" id="particles"></div>
 
-    <!-- ===== ISR LOGO BAND (stacked vertical — matches first image) ===== -->
+    <!-- ===== ISR LOGO BAND (compact, stacked layout) ===== -->
     <div class="isr-brand">
         <div class="isr-logo">
             <div class="isr-letters">ISR</div>
