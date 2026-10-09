@@ -4,121 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISR Open House · AI Learning Hub</title>
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ----- RESET & GLOBAL ----- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* ---------- RESET ---------- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #0b1424;
-            min-height: 100vh;
             color: #fff;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        /* ----- ISR LOGO EXACT (marketing asset) ----- */
+        /* ---------- ISR LOGO (exact horizontal marketing layout) ---------- */
         .isr-brand {
             background: #ffffff;
-            padding: 1rem 2.5rem 1.2rem;
+            padding: 14px 28px 0 28px;
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 4px solid #f2b705;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            flex-wrap: wrap;
+            gap: 16px;
             position: relative;
             z-index: 20;
         }
 
-        .isr-logo-group {
+        .isr-left {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
-        .isr-logo-group svg {
-            height: 90px;
-            width: auto;
-            display: block;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
-        }
-
-        .isr-badge {
+        .isr-logo-block {
             display: flex;
             flex-direction: column;
-            line-height: 1.2;
+            align-items: flex-start;
+            line-height: 1;
         }
 
-        .isr-badge .school-name {
-            font-size: 1.5rem;
-            font-weight: 700;
+        .isr-letters {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 900;
+            font-size: 68px;
             color: #1a2c4e;
-            letter-spacing: -0.02em;
+            letter-spacing: -3px;
+            line-height: 0.85;
+            margin-bottom: 4px;
         }
 
-        .isr-badge .school-sub {
-            font-size: 1rem;
-            color: #3c5a7a;
+        .isr-tagline {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             font-weight: 400;
+            font-size: 12.5px;
+            color: #1a2c4e;
+            line-height: 1.25;
         }
 
-        .isr-badge .campuses {
+        .isr-divider-vert {
+            width: 1px;
+            height: 58px;
+            background: #d6dce6;
+            margin: 0 6px;
+        }
+
+        .isr-right {
             display: flex;
-            gap: 0.5rem;
-            margin-top: 0.3rem;
+            flex-direction: column;
+            gap: 6px;
         }
 
-        .isr-badge .campuses span {
-            font-size: 0.7rem;
+        .isr-right .full-name {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             font-weight: 700;
-            padding: 0.2rem 1rem;
+            font-size: 22px;
+            color: #1a2c4e;
+            letter-spacing: -0.3px;
+            line-height: 1.1;
+        }
+
+        .isr-right .location {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            color: #4a5d7a;
+        }
+
+        .isr-pills {
+            display: flex;
+            gap: 8px;
+            margin-top: 2px;
+        }
+
+        .isr-pills span {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 5px 16px;
             border-radius: 30px;
-            color: white;
+            color: #fff;
             letter-spacing: 0.4px;
             text-transform: uppercase;
+            white-space: nowrap;
         }
 
-        .kindergarten-badge { background: #f2b705; }
-        .elementary-badge { background: #1e5fb4; }
-        .secondary-badge { background: #d93b2b; }
+        .pill-kg  { background: #f2b705; color: #1a2c4e !important; }
+        .pill-el  { background: #1e5fb4; }
+        .pill-sec { background: #d93b2b; }
+
+        /* gold bottom bar of logo band */
+        .isr-brand::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 4px;
+            background: #f2b705;
+        }
 
         .open-house-tag {
             background: linear-gradient(135deg, #ffd966, #ffb347);
             color: #1a2c4e;
             font-weight: 800;
-            padding: 0.7rem 2rem;
-            border-radius: 60px;
-            font-size: 1.2rem;
-            letter-spacing: 0.5px;
-            box-shadow: 0 6px 20px rgba(242, 183, 5, 0.5);
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 15px;
+            letter-spacing: 0.4px;
+            box-shadow: 0 4px 14px rgba(242, 183, 5, 0.45);
             display: flex;
             align-items: center;
-            gap: 0.7rem;
+            gap: 8px;
             border: 2px solid #fff;
-            transition: 0.3s;
+            transition: transform 0.25s;
+            white-space: nowrap;
         }
 
-        .open-house-tag:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 28px rgba(242, 183, 5, 0.7);
-        }
+        .open-house-tag:hover { transform: scale(1.04); }
+        .open-house-tag i { color: #b1620a; }
 
-        .open-house-tag i {
-            color: #b1620a;
-            font-size: 1.3rem;
-        }
-
-        /* ----- ANIMATED BACKGROUND ELEMENTS ----- */
+        /* ---------- HERO ---------- */
         .hero {
             background: linear-gradient(135deg, #0b2a4a 0%, #1a4a7a 100%);
-            padding: 3.5rem 2rem 3rem;
+            padding: 42px 20px 52px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -127,20 +155,15 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 40%, rgba(255, 215, 102, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 60%, rgba(123, 179, 255, 0.08) 0%, transparent 50%);
-            animation: rotateGlow 20s linear infinite;
+            inset: -50%;
+            background:
+                radial-gradient(circle at 30% 40%, rgba(255,215,102,0.09) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(123,179,255,0.09) 0%, transparent 50%);
+            animation: rotateGlow 24s linear infinite;
             pointer-events: none;
         }
 
-        @keyframes rotateGlow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        @keyframes rotateGlow { to { transform: rotate(360deg); } }
 
         .hero::after {
             content: '';
@@ -148,110 +171,95 @@
             bottom: -2px;
             left: 0;
             right: 0;
-            height: 60px;
+            height: 46px;
             background: #0b1424;
             clip-path: ellipse(70% 100% at 50% 100%);
         }
 
         .hero h1 {
             color: #fff;
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
             letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
             position: relative;
             z-index: 2;
-            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-            animation: floatText 3s ease-in-out infinite;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.35);
         }
 
-        @keyframes floatText {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
-
-        .hero h1 i {
-            color: #7bb3ff;
-            margin-right: 12px;
-        }
+        .hero h1 i { color: #7bb3ff; margin-right: 10px; }
 
         .hero p {
             color: #c0d9f0;
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 1.2rem;
+            font-size: 1.05rem;
+            max-width: 620px;
+            margin: 0 auto 16px;
             position: relative;
             z-index: 2;
-            font-weight: 400;
         }
 
         .hero .sub-motivation {
             color: #ffd966;
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 600;
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255,255,255,0.08);
             display: inline-block;
-            padding: 0.6rem 2.5rem;
+            padding: 8px 24px;
             border-radius: 40px;
             backdrop-filter: blur(4px);
-            margin-top: 0.5rem;
             position: relative;
             z-index: 2;
-            border: 1px solid rgba(255, 215, 102, 0.3);
-            animation: pulseGlow 2s ease-in-out infinite;
+            border: 1px solid rgba(255,215,102,0.3);
+            animation: pulseGlow 2.5s ease-in-out infinite;
         }
 
         @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 10px rgba(255, 215, 102, 0.2); }
-            50% { box-shadow: 0 0 30px rgba(255, 215, 102, 0.5); }
+            0%, 100% { box-shadow: 0 0 8px rgba(255,215,102,0.2); }
+            50%      { box-shadow: 0 0 24px rgba(255,215,102,0.45); }
         }
 
-        /* ----- CONTAINER ----- */
+        /* ---------- CONTAINER ---------- */
         .container {
-            max-width: 1200px;
+            max-width: 1080px;
             margin: 0 auto;
-            padding: 2rem 1.5rem 3rem;
+            padding: 28px 20px 40px;
         }
 
-        /* ----- SECTION TITLES ----- */
+        /* ---------- SECTION TITLES ---------- */
         .section-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 0.3rem;
+            color: #fff;
+            margin-bottom: 4px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            gap: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
-        .section-title i {
-            color: #7bb3ff;
-            font-size: 1.6rem;
-        }
+        .section-title i { color: #7bb3ff; font-size: 1.3rem; }
 
         .section-desc {
             color: #8ba8c9;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 18px;
         }
 
-        /* ----- STATION GRID (super interactive cards) ----- */
+        /* ---------- STATION CARDS ---------- */
         .station-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.8rem;
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 18px;
+            margin-bottom: 8px;
         }
 
         .station-card {
             position: relative;
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255,255,255,0.06);
             backdrop-filter: blur(10px);
-            border-radius: 28px;
-            padding: 2.2rem 1.4rem 1.8rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 22px;
+            padding: 26px 18px 20px;
+            border: 1px solid rgba(255,255,255,0.1);
             text-decoration: none;
             color: #fff;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -260,18 +268,14 @@
             align-items: center;
             text-align: center;
             overflow: hidden;
-            cursor: pointer;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.22);
         }
 
-        /* animated gradient border on hover */
         .station-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background: conic-gradient(from 0deg, transparent, #7bb3ff, #ffd966, #ff6b9d, #7bb3ff, transparent);
             animation: spinBorder 4s linear infinite;
             opacity: 0;
@@ -279,102 +283,84 @@
             z-index: 0;
         }
 
-        .station-card:hover::before {
-            opacity: 1;
-        }
+        .station-card:hover::before { opacity: 1; }
 
         .station-card::after {
             content: '';
             position: absolute;
             inset: 3px;
-            background: rgba(11, 20, 36, 0.85);
-            border-radius: 25px;
+            background: rgba(11,20,36,0.86);
+            border-radius: 19px;
             z-index: 1;
         }
 
-        @keyframes spinBorder {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        @keyframes spinBorder { to { transform: rotate(360deg); } }
 
-        .station-card > * {
-            position: relative;
-            z-index: 2;
-        }
+        .station-card > * { position: relative; z-index: 2; }
 
         .station-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: transparent;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 18px 48px rgba(0,0,0,0.4);
         }
 
-        /* pulsing glow behind icon */
         .station-card .icon-wrap {
             position: relative;
             display: inline-block;
-            margin-bottom: 0.8rem;
+            margin-bottom: 8px;
         }
 
         .station-card .icon-wrap::after {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
+            width: 68px; height: 68px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(123, 179, 255, 0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(123,179,255,0.35) 0%, transparent 70%);
             opacity: 0;
             transition: opacity 0.4s;
         }
 
         .station-card:hover .icon-wrap::after {
             opacity: 1;
-            animation: pulseIcon 1.5s ease-in-out infinite;
+            animation: pulseIcon 1.6s ease-in-out infinite;
         }
 
         @keyframes pulseIcon {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
-            50% { transform: translate(-50%, -50%) scale(1.4); opacity: 0.1; }
+            0%, 100% { transform: translate(-50%,-50%) scale(1);   opacity: 0.45; }
+            50%      { transform: translate(-50%,-50%) scale(1.35); opacity: 0.1; }
         }
 
         .station-card .icon {
-            font-size: 3rem;
-            margin-bottom: 0.4rem;
+            font-size: 2.4rem;
             display: block;
             transition: transform 0.4s;
         }
 
-        .station-card:hover .icon {
-            transform: scale(1.15) rotate(-5deg);
-        }
+        .station-card:hover .icon { transform: scale(1.15) rotate(-5deg); }
 
         .station-card h4 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 0.3rem;
+            margin-bottom: 6px;
             transition: color 0.3s;
         }
 
-        .station-card:hover h4 {
-            color: #ffd966;
-        }
+        .station-card:hover h4 { color: #ffd966; }
 
         .station-card p {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: #b8cfe5;
-            line-height: 1.5;
-            margin-bottom: 0.8rem;
+            line-height: 1.45;
+            margin-bottom: 10px;
         }
 
         .station-card .arrow {
             color: #7bb3ff;
-            font-size: 1rem;
-            margin-top: 0.2rem;
-            transition: all 0.3s;
+            font-size: 0.9rem;
             opacity: 0.7;
+            transition: all 0.3s;
         }
 
         .station-card:hover .arrow {
@@ -383,59 +369,52 @@
             opacity: 1;
         }
 
-        /* individual card accent colours */
         .station-card:nth-child(1) .icon { color: #ffb347; }
         .station-card:nth-child(2) .icon { color: #4ecdc4; }
         .station-card:nth-child(3) .icon { color: #7bb3ff; }
         .station-card:nth-child(4) .icon { color: #c084fc; }
 
-        /* floating badge on each card */
         .station-card .card-badge {
             position: absolute;
-            top: 12px;
-            right: 16px;
-            font-size: 0.65rem;
+            top: 12px; right: 14px;
+            font-size: 0.6rem;
             font-weight: 700;
-            padding: 0.2rem 0.8rem;
+            padding: 3px 10px;
             border-radius: 20px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            opacity: 0.8;
+            opacity: 0.85;
             transition: 0.3s;
         }
 
-        .station-card:hover .card-badge {
-            opacity: 1;
-            transform: scale(1.1);
-        }
+        .station-card:hover .card-badge { opacity: 1; transform: scale(1.08); }
 
         .station-card:nth-child(1) .card-badge { background: #ffb347; color: #1a2c4e; }
         .station-card:nth-child(2) .card-badge { background: #4ecdc4; color: #1a2c4e; }
         .station-card:nth-child(3) .card-badge { background: #7bb3ff; color: #1a2c4e; }
         .station-card:nth-child(4) .card-badge { background: #c084fc; color: #1a2c4e; }
 
-        /* ----- DIVIDER ----- */
+        /* ---------- DIVIDER ---------- */
         .divider {
             border: 0;
             height: 2px;
-            background: linear-gradient(to right, rgba(123, 179, 255, 0.3), transparent);
-            margin: 3rem 0 2rem;
+            background: linear-gradient(to right, rgba(123,179,255,0.3), transparent);
+            margin: 36px 0 24px;
         }
 
-        /* ----- RESOURCE CARDS (fun & glowing) ----- */
+        /* ---------- RESOURCE CARDS ---------- */
         .resource-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-top: 0.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
         }
 
         .resource-card {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255,255,255,0.04);
             backdrop-filter: blur(8px);
-            border-radius: 22px;
-            padding: 1.5rem 1.3rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 18px 16px;
+            border: 1px solid rgba(255,255,255,0.08);
             text-decoration: none;
             color: #fff;
             transition: all 0.35s ease;
@@ -449,108 +428,99 @@
         .resource-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 102, 0.06), transparent);
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,215,102,0.07), transparent);
             transition: left 0.6s;
         }
 
-        .resource-card:hover::before {
-            left: 100%;
-        }
+        .resource-card:hover::before { left: 100%; }
 
         .resource-card:hover {
-            transform: translateY(-6px) scale(1.02);
-            border-color: rgba(123, 179, 255, 0.4);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px) scale(1.02);
+            border-color: rgba(123,179,255,0.4);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.32);
+            background: rgba(255,255,255,0.08);
         }
 
         .resource-card .res-icon {
-            font-size: 2rem;
+            font-size: 1.7rem;
             color: #7bb3ff;
-            margin-bottom: 0.4rem;
+            margin-bottom: 6px;
             transition: transform 0.3s;
         }
 
-        .resource-card:hover .res-icon {
-            transform: scale(1.15) rotate(-5deg);
-        }
+        .resource-card:hover .res-icon { transform: scale(1.15) rotate(-5deg); }
 
         .resource-card h5 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 0.2rem;
+            margin-bottom: 3px;
         }
 
         .resource-card p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #a0bdd9;
-            margin: 0.1rem 0 0.5rem;
             line-height: 1.4;
+            margin-bottom: 8px;
         }
 
         .resource-tag {
-            font-size: 0.6rem;
-            background: rgba(123, 179, 255, 0.15);
-            padding: 0.2rem 0.9rem;
+            font-size: 0.58rem;
+            background: rgba(123,179,255,0.15);
+            padding: 3px 10px;
             border-radius: 20px;
             color: #7bb3ff;
             font-weight: 600;
-            margin-top: 0.2rem;
             text-transform: uppercase;
             letter-spacing: 0.4px;
-            border: 1px solid rgba(123, 179, 255, 0.2);
+            border: 1px solid rgba(123,179,255,0.2);
             transition: 0.3s;
         }
 
         .resource-card:hover .resource-tag {
-            background: rgba(255, 215, 102, 0.15);
+            background: rgba(255,215,102,0.15);
             color: #ffd966;
-            border-color: rgba(255, 215, 102, 0.3);
+            border-color: rgba(255,215,102,0.3);
         }
 
-        /* ----- FOOTER / MOTIVATION (updated, no Spring Festival) ----- */
+        /* ---------- FOOTER ---------- */
         .open-house-footer {
             text-align: center;
-            margin-top: 3rem;
-            padding: 2rem 1rem 2.2rem;
-            background: linear-gradient(135deg, rgba(26, 74, 122, 0.4), rgba(11, 42, 74, 0.6));
-            border-radius: 40px;
+            margin-top: 40px;
+            padding: 26px 20px;
+            background: linear-gradient(135deg, rgba(26,74,122,0.4), rgba(11,42,74,0.6));
+            border-radius: 30px;
             color: #e0edff;
             font-weight: 500;
-            border: 1px solid rgba(123, 179, 255, 0.15);
+            border: 1px solid rgba(123,179,255,0.15);
             backdrop-filter: blur(6px);
         }
 
-        .open-house-footer i {
-            color: #ffd966;
-            margin: 0 0.3rem;
-        }
+        .open-house-footer i { color: #ffd966; margin: 0 3px; }
 
         .open-house-footer .big {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 800;
             color: #fff;
             display: block;
-            margin-bottom: 0.4rem;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 6px;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.3);
         }
 
-        .open-house-footer .big i {
-            color: #ffd966;
+        .open-house-footer .big i { color: #ffd966; }
+
+        .open-house-footer .welcome-line {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #b8cfe5;
         }
 
-        /* ----- FLOATING PARTICLES (background fun) ----- */
+        /* ---------- PARTICLES ---------- */
         .particles {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             pointer-events: none;
             z-index: 0;
             overflow: hidden;
@@ -559,95 +529,87 @@
         .particles span {
             position: absolute;
             display: block;
-            width: 6px;
-            height: 6px;
-            background: rgba(123, 179, 255, 0.3);
             border-radius: 50%;
             animation: floatParticle linear infinite;
         }
 
         @keyframes floatParticle {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
+            0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10%  { opacity: 1; }
+            90%  { opacity: 1; }
             100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
         }
 
-        /* ----- RESPONSIVE ----- */
-        @media (max-width: 780px) {
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 900px) {
+            .isr-brand { padding: 12px 18px 0 18px; }
+            .isr-letters { font-size: 54px; }
+            .isr-right .full-name { font-size: 18px; }
+            .isr-divider-vert { display: none; }
+        }
+
+        @media (max-width: 700px) {
             .isr-brand {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 1rem;
-                padding: 1rem 1.5rem;
+                gap: 12px;
+                padding: 14px 16px 0 16px;
             }
             .open-house-tag {
+                font-size: 13px;
+                padding: 8px 18px;
                 align-self: flex-start;
-                font-size: 1rem;
-                padding: 0.5rem 1.5rem;
             }
-            .isr-logo-group svg {
-                height: 65px;
-            }
-            .isr-badge .school-name {
-                font-size: 1.2rem;
-            }
+            .isr-letters { font-size: 48px; }
+            .isr-right .full-name { font-size: 16px; }
+            .isr-right .location { font-size: 13px; }
+            .isr-pills span { font-size: 9px; padding: 4px 12px; }
+
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 0.95rem; }
+            .hero .sub-motivation { font-size: 0.85rem; padding: 6px 16px; }
+
+            .section-title { font-size: 1.2rem; }
+            .station-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .station-card { padding: 20px 12px 16px; }
+            .station-card .icon { font-size: 2rem; }
+            .station-card h4 { font-size: 0.95rem; }
+            .station-card p { font-size: 0.78rem; }
+            .resource-grid { grid-template-columns: 1fr 1fr; }
         }
 
-        @media (max-width: 680px) {
-            .hero h1 { font-size: 2.4rem; }
-            .hero p { font-size: 1rem; }
+        @media (max-width: 480px) {
             .station-grid { grid-template-columns: 1fr; }
-            .section-title { font-size: 1.4rem; }
-            .hero .sub-motivation { font-size: 1rem; padding: 0.5rem 1.5rem; }
+            .resource-grid { grid-template-columns: 1fr; }
+            .isr-pills { flex-wrap: wrap; }
         }
 
-        /* ----- SCROLLBAR (themed) ----- */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b1424;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #2a6f97;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #7bb3ff;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0b1424; }
+        ::-webkit-scrollbar-thumb { background: #2a6f97; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #7bb3ff; }
     </style>
 </head>
 <body>
 
-    <!-- ===== FLOATING PARTICLES (background fun) ===== -->
+    <!-- ===== FLOATING PARTICLES ===== -->
     <div class="particles" id="particles"></div>
 
-    <!-- ===== ISR LOGO EXACT (marketing) ===== -->
+    <!-- ===== ISR LOGO BAND (exact horizontal marketing layout) ===== -->
     <div class="isr-brand">
-        <div class="isr-logo-group">
-            <!-- SVG representation of the ISR logo (exact marketing asset) -->
-            <svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" aria-label="ISR International School on the Rhine">
-                <!-- Large ISR letters in dark blue, exact shape -->
-                <text x="5" y="100" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="140" fill="#1a2c4e" letter-spacing="-6">ISR</text>
-                <!-- Subtext lines -->
-                <text x="8" y="122" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="400" font-size="19" fill="#1a2c4e">International School</text>
-                <text x="8" y="143" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="400" font-size="19" fill="#1a2c4e">on the Rhine · Neuss</text>
-                <!-- Colored bars for Kindergarten, Elementary, Secondary -->
-                <rect x="8" y="152" width="94" height="24" rx="4" fill="#f2b705" />
-                <text x="16" y="168" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#1a2c4e">KINDERGARTEN</text>
-                <rect x="107" y="152" width="102" height="24" rx="4" fill="#1e5fb4" />
-                <text x="115" y="168" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#ffffff">ELEMENTARY</text>
-                <rect x="214" y="152" width="102" height="24" rx="4" fill="#d93b2b" />
-                <text x="222" y="168" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#ffffff">SECONDARY</text>
-            </svg>
-            <div class="isr-badge">
-                <span class="school-name">International School on the Rhine</span>
-                <span class="school-sub">Neuss · Germany</span>
-                <div class="campuses">
-                    <span class="kindergarten-badge">Kindergarten</span>
-                    <span class="elementary-badge">Elementary</span>
-                    <span class="secondary-badge">Secondary</span>
+        <div class="isr-left">
+            <div class="isr-logo-block">
+                <div class="isr-letters">ISR</div>
+                <div class="isr-tagline">International School<br>on the Rhine · Neuss</div>
+            </div>
+            <div class="isr-divider-vert"></div>
+            <div class="isr-right">
+                <div class="full-name">International School on the Rhine</div>
+                <div class="location">Neuss · Germany</div>
+                <div class="isr-pills">
+                    <span class="pill-kg">Kindergarten</span>
+                    <span class="pill-el">Elementary</span>
+                    <span class="pill-sec">Secondary</span>
                 </div>
             </div>
         </div>
@@ -656,7 +618,7 @@
         </div>
     </div>
 
-    <!-- ===== HERO (fun, motivating, AI-themed) ===== -->
+    <!-- ===== HERO ===== -->
     <section class="hero">
         <h1><i class="fas fa-brain"></i> AI Learning Hub</h1>
         <p>Explore artificial intelligence through interactive stations — create, question, play, and understand.</p>
@@ -667,49 +629,37 @@
 
     <div class="container">
 
-        <!-- ===== AI STATIONS ===== -->
+        <!-- ===== STATIONS ===== -->
         <div class="section-title">
             <i class="fas fa-cube"></i> Learning Stations
         </div>
         <div class="section-desc">Choose a station to start your AI journey — designed for curious minds of all ages.</div>
 
         <div class="station-grid">
-            <!-- Station 1 -->
             <a href="station1.html" class="station-card">
                 <span class="card-badge">Create</span>
-                <span class="icon-wrap">
-                    <span class="icon"><i class="fas fa-paint-brush"></i></span>
-                </span>
+                <span class="icon-wrap"><span class="icon"><i class="fas fa-paint-brush"></i></span></span>
                 <h4>🎨 Create &amp; Explore</h4>
                 <p>Generate art, text, and ideas with creative AI tools.</p>
                 <span class="arrow"><i class="fas fa-chevron-right"></i></span>
             </a>
-            <!-- Station 2 -->
             <a href="station2.html" class="station-card">
                 <span class="card-badge">Think</span>
-                <span class="icon-wrap">
-                    <span class="icon"><i class="fas fa-search"></i></span>
-                </span>
+                <span class="icon-wrap"><span class="icon"><i class="fas fa-search"></i></span></span>
                 <h4>🧠 AI Literacy: Spot the Fake</h4>
                 <p>Learn to identify AI-generated content and deepfakes.</p>
                 <span class="arrow"><i class="fas fa-chevron-right"></i></span>
             </a>
-            <!-- Station 3 -->
             <a href="station3.html" class="station-card">
                 <span class="card-badge">Play</span>
-                <span class="icon-wrap">
-                    <span class="icon"><i class="fas fa-gamepad"></i></span>
-                </span>
+                <span class="icon-wrap"><span class="icon"><i class="fas fa-gamepad"></i></span></span>
                 <h4>🎮 AI Games &amp; Challenges</h4>
                 <p>Play interactive games that teach AI concepts.</p>
                 <span class="arrow"><i class="fas fa-chevron-right"></i></span>
             </a>
-            <!-- Station 4 -->
             <a href="station4.html" class="station-card">
                 <span class="card-badge">Learn</span>
-                <span class="icon-wrap">
-                    <span class="icon"><i class="fas fa-cogs"></i></span>
-                </span>
+                <span class="icon-wrap"><span class="icon"><i class="fas fa-cogs"></i></span></span>
                 <h4>🧩 Learn How AI Works</h4>
                 <p>Discover the basics of machine learning and neural networks.</p>
                 <span class="arrow"><i class="fas fa-chevron-right"></i></span>
@@ -718,7 +668,7 @@
 
         <hr class="divider">
 
-        <!-- ===== EXTRA AI RESOURCES ===== -->
+        <!-- ===== RESOURCES ===== -->
         <div class="section-title">
             <i class="fas fa-link"></i> Extra AI Resources
         </div>
@@ -731,21 +681,18 @@
                 <p>Train your own AI models in your browser.</p>
                 <span class="resource-tag">ML · Hands-on</span>
             </a>
-
             <a href="https://experiments.withgoogle.com/collection/ai" target="_blank" class="resource-card">
                 <span class="res-icon"><i class="fas fa-flask"></i></span>
                 <h5>Google AI Experiments</h5>
                 <p>Play with AI through art, music, and coding.</p>
                 <span class="resource-tag">Explore · Fun</span>
             </a>
-
             <a href="https://www.kaggle.com/learn" target="_blank" class="resource-card">
                 <span class="res-icon"><i class="fas fa-database"></i></span>
                 <h5>Kaggle Learn</h5>
                 <p>Free courses on Python, ML, and data science.</p>
                 <span class="resource-tag">Courses · Data</span>
             </a>
-
             <a href="https://www.aiunplugged.org/" target="_blank" class="resource-card">
                 <span class="res-icon"><i class="fas fa-puzzle-piece"></i></span>
                 <h5>AI Unplugged</h5>
@@ -754,44 +701,34 @@
             </a>
         </div>
 
-        <!-- ===== MOTIVATIONAL FOOTER (no Spring Festival) ===== -->
+        <!-- ===== FOOTER ===== -->
         <div class="open-house-footer">
             <span class="big"><i class="fas fa-lightbulb"></i> Curiosity starts here</span>
             <i class="fas fa-arrow-right"></i> Visit every station, ask questions, and imagine what you can create with AI <i class="fas fa-arrow-left"></i>
-            <div style="margin-top: 0.6rem; font-size: 0.95rem; color: #b8cfe5;">
+            <div class="welcome-line">
                 <i class="fas fa-calendar-alt"></i> ISR Open House · We can't wait to welcome you!
             </div>
         </div>
 
     </div>
 
-    <!-- ===== JAVASCRIPT: FLOATING PARTICLES (interactive background) ===== -->
+    <!-- ===== PARTICLES SCRIPT ===== -->
     <script>
-        (function() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 30;
-
-            for (let i = 0; i < particleCount; i++) {
-                const span = document.createElement('span');
-                const size = Math.random() * 6 + 3;
-                const left = Math.random() * 100;
-                const duration = Math.random() * 15 + 10;
-                const delay = Math.random() * 15;
-                const opacity = Math.random() * 0.4 + 0.1;
-
-                span.style.width = size + 'px';
-                span.style.height = size + 'px';
-                span.style.left = left + '%';
-                span.style.animationDuration = duration + 's';
-                span.style.animationDelay = delay + 's';
-                span.style.background = `rgba(123, 179, 255, ${opacity})`;
-
-                // Randomly color some particles gold
-                if (Math.random() > 0.7) {
-                    span.style.background = `rgba(255, 215, 102, ${opacity})`;
-                }
-
-                particlesContainer.appendChild(span);
+        (function () {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 26; i++) {
+                const s = document.createElement('span');
+                const size = Math.random() * 5 + 3;
+                const opacity = Math.random() * 0.35 + 0.1;
+                s.style.width = size + 'px';
+                s.style.height = size + 'px';
+                s.style.left = Math.random() * 100 + '%';
+                s.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                s.style.animationDelay = (Math.random() * 15) + 's';
+                s.style.background = Math.random() > 0.7
+                    ? `rgba(255,215,102,${opacity})`
+                    : `rgba(123,179,255,${opacity})`;
+                container.appendChild(s);
             }
         })();
     </script>
