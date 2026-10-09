@@ -17,119 +17,81 @@
             min-height: 100vh;
         }
 
-        /* ---------- ISR LOGO (exact horizontal marketing layout) ---------- */
+        /* ---------- ISR LOGO (stacked vertical — matches first image) ---------- */
         .isr-brand {
             background: #ffffff;
-            padding: 14px 28px 0 28px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
+            padding: 28px 32px 0 32px;
             position: relative;
             z-index: 20;
-        }
-
-        .isr-left {
             display: flex;
-            align-items: center;
-            gap: 18px;
-            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .isr-logo-block {
+        .isr-logo {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            line-height: 1;
+            max-width: 420px;
+            width: 100%;
         }
 
+        /* Big "ISR" letters */
         .isr-letters {
             font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             font-weight: 900;
-            font-size: 68px;
+            font-size: 110px;
             color: #1a2c4e;
-            letter-spacing: -3px;
-            line-height: 0.85;
-            margin-bottom: 4px;
+            letter-spacing: -5px;
+            line-height: 0.82;
+            margin-bottom: 10px;
         }
 
-        .isr-tagline {
+        /* Full school name (two lines) */
+        .isr-fullname {
             font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             font-weight: 400;
-            font-size: 12.5px;
+            font-size: 30px;
             color: #1a2c4e;
-            line-height: 1.25;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
         }
 
-        .isr-divider-vert {
-            width: 1px;
-            height: 58px;
-            background: #d6dce6;
-            margin: 0 6px;
-        }
-
-        .isr-right {
+        /* Three colored bars at the bottom */
+        .isr-bars {
             display: flex;
-            flex-direction: column;
-            gap: 6px;
+            width: 100%;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 0;
         }
 
-        .isr-right .full-name {
-            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        .isr-bar {
+            flex: 1;
+            padding: 10px 4px;
+            text-align: center;
+            font-size: 13px;
             font-weight: 700;
-            font-size: 22px;
-            color: #1a2c4e;
-            letter-spacing: -0.3px;
-            line-height: 1.1;
-        }
-
-        .isr-right .location {
-            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            font-weight: 400;
-            font-size: 15px;
-            color: #4a5d7a;
-        }
-
-        .isr-pills {
-            display: flex;
-            gap: 8px;
-            margin-top: 2px;
-        }
-
-        .isr-pills span {
-            font-size: 10px;
-            font-weight: 700;
-            padding: 5px 16px;
-            border-radius: 30px;
-            color: #fff;
-            letter-spacing: 0.4px;
+            letter-spacing: 0.6px;
             text-transform: uppercase;
             white-space: nowrap;
         }
 
-        .pill-kg  { background: #f2b705; color: #1a2c4e !important; }
-        .pill-el  { background: #1e5fb4; }
-        .pill-sec { background: #d93b2b; }
+        .bar-kg  { background: #f2b705; color: #1a2c4e; }
+        .bar-el  { background: #1e5fb4; color: #ffffff; }
+        .bar-sec { background: #d93b2b; color: #ffffff; }
 
-        /* gold bottom bar of logo band */
-        .isr-brand::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -4px;
-            width: 100%;
-            height: 4px;
-            background: #f2b705;
-        }
-
+        /* Open House badge floating on the right of the logo band */
         .open-house-tag {
+            position: absolute;
+            top: 32px;
+            right: 40px;
             background: linear-gradient(135deg, #ffd966, #ffb347);
             color: #1a2c4e;
             font-weight: 800;
             padding: 10px 22px;
             border-radius: 50px;
-            font-size: 15px;
+            font-size: 14px;
             letter-spacing: 0.4px;
             box-shadow: 0 4px 14px rgba(242, 183, 5, 0.45);
             display: flex;
@@ -142,6 +104,17 @@
 
         .open-house-tag:hover { transform: scale(1.04); }
         .open-house-tag i { color: #b1620a; }
+
+        /* Gold bottom accent */
+        .isr-brand::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 4px;
+            background: #f2b705;
+        }
 
         /* ---------- HERO ---------- */
         .hero {
@@ -542,28 +515,28 @@
 
         /* ---------- RESPONSIVE ---------- */
         @media (max-width: 900px) {
-            .isr-brand { padding: 12px 18px 0 18px; }
-            .isr-letters { font-size: 54px; }
-            .isr-right .full-name { font-size: 18px; }
-            .isr-divider-vert { display: none; }
+            .isr-letters { font-size: 90px; }
+            .isr-fullname { font-size: 24px; }
+            .isr-bar { font-size: 11px; padding: 9px 3px; }
         }
 
         @media (max-width: 700px) {
-            .isr-brand {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-                padding: 14px 16px 0 16px;
-            }
+            .isr-brand { padding: 22px 20px 0 20px; }
+
             .open-house-tag {
-                font-size: 13px;
-                padding: 8px 18px;
-                align-self: flex-start;
+                position: static;
+                align-self: flex-end;
+                margin-top: 12px;
+                font-size: 12px;
+                padding: 8px 16px;
             }
-            .isr-letters { font-size: 48px; }
-            .isr-right .full-name { font-size: 16px; }
-            .isr-right .location { font-size: 13px; }
-            .isr-pills span { font-size: 9px; padding: 4px 12px; }
+
+            .isr-brand { flex-direction: column; align-items: center; }
+
+            .isr-letters { font-size: 72px; letter-spacing: -3px; }
+            .isr-fullname { font-size: 20px; }
+            .isr-bars { flex-wrap: nowrap; }
+            .isr-bar { font-size: 9px; padding: 8px 2px; letter-spacing: 0.3px; }
 
             .hero h1 { font-size: 1.8rem; }
             .hero p { font-size: 0.95rem; }
@@ -579,9 +552,11 @@
         }
 
         @media (max-width: 480px) {
+            .isr-letters { font-size: 58px; }
+            .isr-fullname { font-size: 16px; }
+            .isr-bar { font-size: 8px; padding: 7px 2px; }
             .station-grid { grid-template-columns: 1fr; }
             .resource-grid { grid-template-columns: 1fr; }
-            .isr-pills { flex-wrap: wrap; }
         }
 
         ::-webkit-scrollbar { width: 8px; }
@@ -595,22 +570,18 @@
     <!-- ===== FLOATING PARTICLES ===== -->
     <div class="particles" id="particles"></div>
 
-    <!-- ===== ISR LOGO BAND (exact horizontal marketing layout) ===== -->
+    <!-- ===== ISR LOGO BAND (stacked vertical — matches first image) ===== -->
     <div class="isr-brand">
-        <div class="isr-left">
-            <div class="isr-logo-block">
-                <div class="isr-letters">ISR</div>
-                <div class="isr-tagline">International School<br>on the Rhine · Neuss</div>
+        <div class="isr-logo">
+            <div class="isr-letters">ISR</div>
+            <div class="isr-fullname">
+                International School<br>
+                on the Rhine · Neuss
             </div>
-            <div class="isr-divider-vert"></div>
-            <div class="isr-right">
-                <div class="full-name">International School on the Rhine</div>
-                <div class="location">Neuss · Germany</div>
-                <div class="isr-pills">
-                    <span class="pill-kg">Kindergarten</span>
-                    <span class="pill-el">Elementary</span>
-                    <span class="pill-sec">Secondary</span>
-                </div>
+            <div class="isr-bars">
+                <div class="isr-bar bar-kg">Kindergarten</div>
+                <div class="isr-bar bar-el">Elementary</div>
+                <div class="isr-bar bar-sec">Secondary</div>
             </div>
         </div>
         <div class="open-house-tag">
